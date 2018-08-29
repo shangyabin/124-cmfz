@@ -18,21 +18,24 @@
         $(function () {
             //alert("asdas");
             $.ajax({
-                url: "${pageContext.request.contextPath}/menu/showAll",
-                dataType: "JSON",
-                success: function (data) {
+                url: "${pageContext.request.contextPath}/menu/showAll",   //路径
+                dataType: "JSON",  //数据类型为JSON类型
+                success: function (data) {  //数组 进行遍历
                     //一级分类二级分类
+                    //集合  遍历元素下标  遍历的元素名称
                     $.each(data, function (index, first) {
                         // alert(first.title);
-                        var c = "";
+                        var c = "";  //设置一个变量
+                        //一级分类下二级元素的遍历  遍历元素的下标  遍历的元素名称
                         $.each(first.secondMenu, function (index1, second) {
+                            //添加按钮，居中，添加图标，点击事件（添加一个选项卡）
                             c += "<p style='text-align: center'><a href='#' class=\"easyui-linkbutton\"  data-options=\"iconCls:'icon-search'\" onclick=\"addTabs('" + second.title + "','" + second.iconcls + "','" + second.href + "')\"> " + second.title + " </a></p > ";
-                            console.log(second.title)
+                            console.log(second.title)  //控制台打印
                         });
 
                         //console.log(first+"sss")
                         //alert(first.title)
-                        $('#aa').accordion('add', {
+                        $('#aa').accordion('add', {  //一级类别下的属性值
                             title: first.title,
                             content: c,
                             iconCls: first.iconCls,
@@ -44,18 +47,18 @@
         })
         function addTabs(title, iconCls, href) {
             /*
-             * 判断选选项卡是否存在
+             * 判断选项卡是否存在
              * */
-            var b = $("#tt").tabs("exists", title);
+            var b = $("#tt").tabs("exists", title); //exists表明选项卡是否存在
             /*alert(b);*/
             if (b) {
-                $("#tt").tabs("select", title)
+                $("#tt").tabs("select", title)  //查询选项卡
             } else {
                 // 添加一个未选中状态的选项卡面板
                 $('#tt').tabs('add', {
                     title: title,
-                    selected: true,
-                    closable: true,
+                    selected: true,  //选中
+                    closable: true,  //显示关闭按钮
                     iconCls: iconCls,
                     href: "${pageContext.request.contextPath}" + href
                 });
