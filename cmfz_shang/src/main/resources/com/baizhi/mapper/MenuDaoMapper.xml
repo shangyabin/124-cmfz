@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.baizhi.dao.MenuDao">
+    <resultMap id="MenuMap" type="Menu">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="iconCls" column="iconCls"/>
+        <result property="href" column="href"/>
+        <collection property="secondMenu" ofType="Menu">
+            <id column="cId" property="id"/>
+            <result property="iconCls" column="cIconCls"/>
+            <result property="title" column="cTitle"/>
+            <result property="href" column="cHref"/>
+        </collection>
+    </resultMap>
+    <select id="getAll" resultMap="MenuMap">
+            select p.*,c.id  cId, c.title cTitle,c.iconCls cIconCls,c.href cHref
+            from c_menu p LEFT JOIN c_menu c
+            on p.id = c.parentId where p.parentId = 0
+        </select>
+</mapper>
