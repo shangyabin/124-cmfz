@@ -5,4 +5,13 @@
     <select id="queryAll" resultType="Banner">
         SELECT * from d_banner
     </select>
+    <insert id="insertBanner" parameterType="Banner">
+        insert INTO d_banner VALUES (0,#{title},#{url},#{status},sysdate(),#{description})
+    </insert>
+    <update id="updateBanner" >
+        update d_banner set status=#{status} where id=#{id}
+    </update>
+    <delete id="deleteBanner">
+        delete from d_banner where id=#{id}
+    </delete>
 </mapper>

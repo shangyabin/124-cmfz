@@ -1,6 +1,11 @@
 package com.baizhi.dao;
 
-import org.springframework.boot.Banner;
+
+
+
+
+import com.baizhi.entity.Banner;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -10,5 +15,11 @@ import java.util.List;
 public interface BannerDao {
     //查所有
     public List<Banner> queryAll();
+    //添加
+    public void insertBanner(Banner banner);
+    //修改
+    public void updateBanner(@Param("status") String status,@Param("id") int id);
+    //删除
+    public void deleteBanner(int id);
 
 }

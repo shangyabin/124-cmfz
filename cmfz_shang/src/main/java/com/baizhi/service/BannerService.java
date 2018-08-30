@@ -1,6 +1,8 @@
 package com.baizhi.service;
 
-import org.springframework.boot.Banner;
+
+
+import com.baizhi.entity.Banner;
 
 import java.util.List;
 
@@ -10,4 +12,10 @@ import java.util.List;
 public interface BannerService {
     //遍历所有
     public List<Banner> queryAll();
+    //添加
+    public void insertBanner(Banner banner);
+    //修改
+    public void updateBanner(String status,int id);
+    //删除
+    public void deleteBanner(int id);
 }

@@ -1,34 +1,29 @@
 package com.baizhi.entity;
 
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by 小尚 on 2018/8/29.
+ * Created by 小尚 on 2018/8/30.
  */
-public class banner implements Serializable{
+public class Banner implements Serializable{
     private int id;
-    private String title;  //标题
-    private String url;  //图片路径
-    private String description;  //图片描述
+    private String title; //标题
+    private String url;  //路径
     private String status;  //状态
+    private Date createDate; //创建时间
+    private String description; //描述
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date createDate;  //上传日期
+    public Banner() {
+    }
 
-    public banner(int id, String title, String url, String description, String status, Date createDate) {
+    public Banner(int id, String title, String url, String status, Date createDate, String description) {
         this.id = id;
         this.title = title;
         this.url = url;
-        this.description = description;
         this.status = status;
         this.createDate = createDate;
-    }
-
-    public banner() {
+        this.description = description;
     }
 
     public int getId() {
@@ -55,14 +50,6 @@ public class banner implements Serializable{
         this.url = url;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -79,15 +66,23 @@ public class banner implements Serializable{
         this.createDate = createDate;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
-        return "banner{" +
+        return "Banner{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", url='" + url + '\'' +
-                ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", createDate=" + createDate +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
