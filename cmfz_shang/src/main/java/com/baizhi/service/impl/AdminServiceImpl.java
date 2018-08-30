@@ -1,7 +1,8 @@
-package com.baizhi.service;
+package com.baizhi.service.impl;
 
 import com.baizhi.dao.AdminDao;
 import com.baizhi.entity.Admin;
+import com.baizhi.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
  * Created by 小尚 on 2018/8/29.
  */
 @Service
-public class AdminServiceImpl implements AdminService{
+public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminDao adminDao;
     //判断返回的对象和数据库中的是否相同

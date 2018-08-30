@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 public class AdminController {
     @Autowired
     private AdminService adminService;
-
+    //登陆
     @RequestMapping("/loginn")
     public String loginn(HttpSession session,Admin admin){
         //判断对象是否为空
@@ -33,6 +33,11 @@ public class AdminController {
             return "/main/main";
         }
         return "login";
-
+    }
+    //退出
+    @RequestMapping("/exit")
+    public String  exit(HttpSession session){
+        session.invalidate();
+        return "redirect:/login.jsp";
     }
 }

@@ -30,7 +30,7 @@
                         $.each(first.secondMenu, function (index1, second) {
                             //添加按钮，居中，添加图标，点击事件（添加一个选项卡）
                             c += "<p style='text-align: center'><a href='#' class=\"easyui-linkbutton\"  data-options=\"iconCls:'icon-search'\" onclick=\"addTabs('" + second.title + "','" + second.iconcls + "','" + second.href + "')\"> " + second.title + " </a></p > ";
-                            console.log(second.title)  //控制台打印
+                            //console.log(second.title)  //控制台打印
                         });
 
                         //console.log(first+"sss")
@@ -72,10 +72,9 @@
     <div style="font-size: 24px;color: #FAF7F7;font-family: 楷体;font-weight: 900;width: 500px;float:left;padding-left: 20px;padding-top: 10px">
         持名法州后台管理系统
     </div>
-    <div style="font-size: 16px;color: #FAF7F7;font-family: 楷体;width: 300px;float:right;padding-top:15px">欢迎您:xxx &nbsp;<a
-            href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">修改密码</a>&nbsp;&nbsp;<a href="#"
-                                                                                                         class="easyui-linkbutton"
-                                                                                                         data-options="iconCls:'icon-01'">退出系统</a>
+    <div style="font-size: 16px;color: #FAF7F7;font-family: 楷体;width: 400px;float:right;padding-top:15px">欢迎您:${sessionScope.admin1.username} &nbsp;
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">修改密码</a>&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/admin/exit" class="easyui-linkbutton" data-options="iconCls:'icon-01'">退出系统</a>
     </div>
 </div>
 <div data-options="region:'south',split:true" style="height: 40px;background: #5C160C">

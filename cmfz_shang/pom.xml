@@ -73,7 +73,12 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
-
+    <!--对Json的依赖-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.15</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.tomcat.embed</groupId>
       <artifactId>tomcat-embed-jasper</artifactId>
