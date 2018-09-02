@@ -23,6 +23,9 @@ spring:
     encoding:
       charset: UTF-8
       force: true
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
 #别名，以及对dao的配置
 mybatis:
   type-aliases-package: com.baizhi.entity

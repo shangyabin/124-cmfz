@@ -17,8 +17,8 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
     //登陆
-    @RequestMapping("/loginn")
-    public String loginn(HttpSession session,Admin admin){
+    @RequestMapping("/loginin")
+    public String loginin(HttpSession session,Admin admin){
         //判断对象是否为空
         //为空重新登陆
         if(admin==null){

@@ -69,7 +69,6 @@
                     if (row != null) {
                         //销毁选中行
                         $('#dg').edatagrid('destroyRow');
-                        /*$('#dg').edatagrid('reload')*/
                     } else {
                         alert("请先选中行!!!");
                     }

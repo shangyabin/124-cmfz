@@ -1,9 +1,11 @@
 package com.baizhi.entity;
 
+
+
 /**
  * Created by 小尚 on 2018/8/29.
  */
-public class Admin {
+public class Admin{
     private int id;
     private String username;
     private String password;

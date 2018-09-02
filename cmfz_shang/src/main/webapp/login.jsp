@@ -51,7 +51,7 @@
 </head>
 <body>
 <div class="login">
-    <form id="loginForm" action="${pageContext.request.contextPath}/admin/loginn" method="post">
+    <form id="loginForm" action="${pageContext.request.contextPath}/admin/loginin" method="post">
 
         <table>
             <tbody>
