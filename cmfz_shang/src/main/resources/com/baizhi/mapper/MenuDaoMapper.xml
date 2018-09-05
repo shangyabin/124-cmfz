@@ -16,7 +16,7 @@
     </resultMap>
     <select id="getAll" resultMap="MenuMap">
             select p.*,c.id  cId, c.title cTitle,c.iconCls cIconCls,c.href cHref
-            from c_menu p LEFT JOIN c_menu c
+            from d_menu p LEFT JOIN d_menu c
             on p.id = c.parentId where p.parentId = 0
         </select>
 </mapper>
